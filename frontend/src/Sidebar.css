@@ -1,0 +1,54 @@
+/* Sidebar container */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: 0.5s;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* Links on hover */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Sidebar close button */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Page content */
+  .main-content {
+    margin-left: 250px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+    transition: margin-left .5s;
+  }
+  
+  /* When the sidebar is hidden */
+  .sidebar-hidden .sidebar {
+    width: 0;
+  }
+  
+  .sidebar-hidden .main-content {
+    margin-left: 0;
+  }
+  

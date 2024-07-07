@@ -1,0 +1,35 @@
+.view-orders-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .orders-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .order-item button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .order-item button:hover {
+    background-color: #0056b3;
+  }
+  
