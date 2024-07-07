@@ -33,7 +33,7 @@ const QuickSelectModal = ({ onSelect, onClose }) => {
 
   const fetchProducts = async (categoryId, page) => {
     try {
-      const response = await axios.get(`/categories/${categoryId}/products`, {
+      const response = await axios.get(`http://localhost:3000/categories/${categoryId}/products`, {
         params: { page }
       });
       return response.data;
@@ -45,7 +45,7 @@ const QuickSelectModal = ({ onSelect, onClose }) => {
 
   const fetchTotalProducts = async (categoryId) => {
     try {
-      const response = await axios.get(`/categories/${categoryId}/products/count`);
+      const response = await axios.get(`http://localhost:3000/categories/${categoryId}/products/count`);
       return response.data.total;
     } catch (error) {
       console.error('Error fetching total products:', error);

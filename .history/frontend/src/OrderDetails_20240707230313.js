@@ -54,10 +54,10 @@ const OrderDetails = () => {
   const handleSaveChanges = async () => {
     try {
       for (const [productId, quantity] of Object.entries(quantityChanges)) {
-        await axios.put(`/orders/${orderId}/products/${productId}`, { quantity });
+        await axios.put(`http://localhost:3000/orders/${orderId}/products/${productId}`, { quantity });
       }
       // Re-fetch the order details to reflect changes
-      const response = await axios.get(`/orders/${orderId}`);
+      const response = await axios.get(`http://localhost:3000/orders/${orderId}`);
       setOrder(response.data);
       setQuantityChanges({});
     } catch (error) {
@@ -68,7 +68,7 @@ const OrderDetails = () => {
 
   const handleDeleteProduct = async (productId) => {
     try {
-      const response = await axios.delete(`/orders/${orderId}/products/${productId}`);
+      const response = await axios.delete(`http://localhost:3000/orders/${orderId}/products/${productId}`);
       setOrder(response.data);
       setSelectedProducts(response.data.selectedProducts.map(product => ({
         ...product,
@@ -83,10 +83,10 @@ const OrderDetails = () => {
   const handleBulkDelete = async () => {
     try {
       for (const productId of selectedProducts.filter(product => product.selected).map(product => product.id)) {
-        await axios.delete(`/orders/${orderId}/products/${productId}`);
+        await axios.delete(`http://localhost:3000/orders/${orderId}/products/${productId}`);
       }
       // Re-fetch the order details to reflect changes
-      const response = await axios.get(`/orders/${orderId}`);
+      const response = await axios.get(`http://localhost:3000/orders/${orderId}`);
       setOrder(response.data);
       setSelectedProducts(response.data.selectedProducts.map(product => ({
         ...product,
@@ -114,10 +114,10 @@ const OrderDetails = () => {
   const handleQuickSelect = async (newProducts) => {
     try {
       for (const product of newProducts) {
-        await axios.post(`/orders/${orderId}/products`, { product });
+        await axios.post(`http://localhost:3000/orders/${orderId}/products`, { product });
       }
       // Re-fetch the order details to reflect changes
-      const response = await axios.get(`/orders/${orderId}`);
+      const response = await axios.get(`http://localhost:3000/orders/${orderId}`);
       setOrder(response.data);
     } catch (error) {
       console.error('Error adding products:', error);

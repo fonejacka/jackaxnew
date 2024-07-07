@@ -117,7 +117,7 @@ const OrderDetails = () => {
         await axios.post(`/orders/${orderId}/products`, { product });
       }
       // Re-fetch the order details to reflect changes
-      const response = await axios.get(`/orders/${orderId}`);
+      const response = await axios.get(`http://localhost:3000/orders/${orderId}`);
       setOrder(response.data);
     } catch (error) {
       console.error('Error adding products:', error);

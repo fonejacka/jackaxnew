@@ -29,7 +29,7 @@ function CreateOrder() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('/all-users');
+        const response = await axios.get('http://localhost:3000/all-users');
         setAllUsers(response.data);
       } catch (error) {
         console.error('Error fetching users:', error);
@@ -82,7 +82,7 @@ function CreateOrder() {
 
   const handleCreateOrder = async () => {
     try {
-      await axios.post('/create-order', {
+      await axios.post('http://localhost:3000/create-order', {
         customer,
         selectedProducts
       });
